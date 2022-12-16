@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-
+use App\Http\Controllers\NewMessageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +28,9 @@ Route::get('/', function () {
 Route::get('/chat', function () {
     return Inertia::render('Chat');
 })->middleware(['auth', 'verified'])->name('chat');
+
+Route::post('/setMessage', NewMessageController::class)
+->middleware(['auth', 'verified'])->name('setMessage');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
