@@ -16,6 +16,7 @@ export default function Chat(props) {
     const submit = (e) => {
         e.preventDefault();
         post(route('setMessage'));
+        setData({message: ""});
     };
     channelGlobalChat(setListen)
     console.log(listen)
@@ -36,7 +37,7 @@ export default function Chat(props) {
                                     <InputLabel forInput="message" value="Message" />
                                     <input 
                                     type="text" 
-                                    className="mt-3 w-full"
+                                    className="mt-3 w-full bg-current  dark:bg-gray-700"
                                     name='message' 
                                     value={data.message} 
                                     onChange={e => setData('message', e.target.value)} />

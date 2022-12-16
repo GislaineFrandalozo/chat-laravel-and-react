@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 export var channelGlobalChat = (setListen) => {
     Echo.join(`GlobalChat`)
     .here((users) => {
-        //lista todos usarios online
+        console.log(users);
     })
     .joining((user) => {
         // quando um novo usario logar
