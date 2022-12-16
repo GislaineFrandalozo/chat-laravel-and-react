@@ -20,3 +20,7 @@ Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
 Broadcast::channel('Quote', function ($user) {
     return true;
 });
+
+Broadcast::channel('GlobalChat', function ($user) {
+    return ['id' => $user->id, 'name' => $user->name];
+});
