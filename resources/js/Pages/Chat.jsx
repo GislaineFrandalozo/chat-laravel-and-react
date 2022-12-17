@@ -4,6 +4,7 @@ import { Head } from '@inertiajs/inertia-react';
 import InputMessage from '@/Components/InputMessage';
 import ChatView from '@/Layouts/ChatView';
 import Body from '@/Layouts/BodyLayout';
+import IconScroll from '@/Components/IconScroll';
 
 export default function Chat(props) {
    
@@ -15,6 +16,7 @@ export default function Chat(props) {
         >
             <Head title="Chat" />
             <Body>
+                <IconScroll />
                 <ChatView />
                 <InputMessage />
             </Body>
