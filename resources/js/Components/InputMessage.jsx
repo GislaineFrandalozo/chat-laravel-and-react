@@ -19,7 +19,7 @@ export default function InputMessage(props) {
                 <div className="text-gray-900 w-5/6 flex dark:text-gray-100">
                     <input
                         type="text"
-                        className="w-full bg-bg-gray-700 dark:bg-gray-700 border-transparent"
+                        className="w-full bg-gray-700 dark:bg-gray-700 border-transparent"
                         name='message'
                         value={data.message}
                         onChange={e => setData('message', e.target.value)} />
