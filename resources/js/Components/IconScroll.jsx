@@ -23,11 +23,11 @@ export default function IconScroll() {
                 <div className="fixed bottom-20 right-2">
                 <div className='
                     animate-bounce 
-                    bg-white 
+                    bg-slate-500/50 
                     dark:bg-slate-800 
                     p-2 w-10 h-10 ring-1 
-                    ring-slate-900/5 
-                    dark:ring-slate-200/20 
+                    ring-slate-200/20 
+                    dark:ring-slate-900/5 
                     shadow-lg rounded-full 
                     flex items-center 
                     justify-center'

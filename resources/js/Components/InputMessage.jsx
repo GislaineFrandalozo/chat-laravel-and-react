@@ -19,13 +19,13 @@ export default function InputMessage(props) {
                 <div className="text-gray-900 w-5/6 flex dark:text-gray-100">
                     <input
                         type="text"
-                        className="w-full bg-gray-700 dark:bg-gray-700 border-transparent"
+                        className="w-full bg-slate-500/50 dark:bg-slate-900 border-transparent"
                         name='message'
                         value={data.message}
                         onChange={e => setData('message', e.target.value)} />
                 </div>
                 <div className="self-center px-1 w-1/6 grid justify-items-center">
-                    <PrimaryButton className="h-min w-min" processing={processing}>
+                    <PrimaryButton className="h-min w-min text-neutral-900 dark:text-neutral-200 hover:bg-green-600 hover:dark:bg-green-600 bg-green-400 dark:bg-green-800" processing={processing}>
                         ok
                     </PrimaryButton>
                 </div>
