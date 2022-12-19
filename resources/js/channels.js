@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
 export var channelGlobalChat = (setMessageListener) => {
-    Echo.join(`presence-GlobalChat`)
+    Echo.join(`GlobalChat`)
     .here((users) => {
         console.log(users);
     })
