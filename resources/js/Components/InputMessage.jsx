@@ -1,16 +1,20 @@
+import { useChatChannelContext } from "@/chatChannelContext";
 import setMessage from "@/routes";
 import { useState } from "react"
 
 export default function InputMessage(props) {
    const [data, setData] = useState({message: ""})
-
+   const { setEmitedMessage } = useChatChannelContext();
    const handleClick = (event) => {
     function handleError(error) {
         console.log(error);
     }
     event.preventDefault();
-    setMessage(data, handleError);
-    setData({ message: "" });
+    if(data.message.length > 0){
+        setMessage(data, handleError);
+        setData({ message: "" });
+        setEmitedMessage(data);
+    }
    }
     return (
         <div className="bg-white sm:rounded-lg sm:my-3 sm:mx-4 dark:bg-gray-800 fixed bottom-0 left-0 right-0">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Events\NewMessage;
+use Illuminate\Support\Facades\Auth;
 
 class NewMessageController extends Controller
 {
@@ -15,6 +16,7 @@ class NewMessageController extends Controller
      */
     public function __invoke(Request $request)
     {
-        broadcast(new NewMessage($request->message));
+        $user = Auth::guard('web')->user();
+        broadcast(new NewMessage($request->message, $user))->toOthers();
     }
 }

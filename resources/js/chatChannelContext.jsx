@@ -1,21 +1,29 @@
 import { channelGlobalChat } from "./channels";
-import { useState, createContext } from 'react';
+import { useState, createContext, useContext } from 'react';
 
 const ChatChannelContext = createContext({});
 
 function ChatChannel({children}) {
-    const [listen, setListen] = useState({ message: '' })
-    channelGlobalChat(setListen)
-    console.log(listen)
+    const [listen, setListen] = useState({});
+    const [emitedMessage, setEmitedMessage] = useState({});
+    function setMessageListenner(event) {
+
+        setListen({message: event.message.message, user: event.message.user});
+    }
+    channelGlobalChat(setMessageListenner);
     return (
-    <ChatChannelContext.Provider value={{}}>
+    <ChatChannelContext.Provider value={{
+        listen, 
+        setEmitedMessage,
+        emitedMessage
+        }}>
         {children}
     </ChatChannelContext.Provider>
     )
 }
 
 const useChatChannelContext = () => {
-    return useContext(ChatChannelContext)
+    return useContext(ChatChannelContext);
   }
   
-export { ChatChannel, useChatChannelContext }
+export { ChatChannel, useChatChannelContext };
