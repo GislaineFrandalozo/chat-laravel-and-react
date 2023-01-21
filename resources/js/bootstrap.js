@@ -26,12 +26,14 @@ window.Pusher = Pusher;
 window.Echo = new Echo({
     broadcaster: 'pusher',
     key: import.meta.env.VITE_PUSHER_APP_KEY,
-    wsHost: import.meta.env.VITE_PUSHER_HOST ? import.meta.env.VITE_PUSHER_HOST : `ws-${import.meta.env.VITE_PUSHER_APP_CLUSTER}.pusher.com`,
+    wsHost: window.location.hostname,
     wsPort: import.meta.env.VITE_PUSHER_PORT ?? 80,
-    wssPort: import.meta.env.VITE_PUSHER_PORT ?? 443,
-    forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
-    enabledTransports: ['ws', 'wss'],
+    //cluster: import.meta.env.VITE_PUSHER_APP_CLUSTER,
+    //wssPort: import.meta.env.VITE_PUSHER_PORT ?? 443,
+    forceTLS: false,
+    disableStats: true,
+    //enabledTransports: ['ws', 'wss'],
 });
 
-const socketId = window.Echo.socketId();
-axios.defaults.headers.common['X-Socket-Id'] = socketId;
+//const socketId = window.Echo.socketId();
+//axios.defaults.headers.common['X-Socket-Id'] = socketId;
