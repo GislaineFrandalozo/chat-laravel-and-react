@@ -37,6 +37,6 @@ class QuoteBroadcasting implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('Quote');
+        return new Channel('Quote');
     }
 }
