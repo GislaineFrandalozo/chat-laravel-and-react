@@ -13,12 +13,10 @@ export const channelGlobalChat = (setMessageListener) => {
         // quando um usuario sair
         console.log(user.name);
     })
-    .listen('NewMessage', useCallback(setMessageListener))
-    .listen('NewMessage', (message) => {
-        console.log(message)
-    });
+    .listen('NewMessage', useCallback(setMessageListener));
 }
 
-export const channelQuote = () => { 
-    Echo.channel('Quote').listen('QuoteBroadcasting', (e) => {console.log(e.message)});
+export const channelQuote = (setMessageQuote) => { 
+    Echo.channel('Quote')
+    .listen('QuoteBroadcasting', useCallback(setMessageQuote));
 }
