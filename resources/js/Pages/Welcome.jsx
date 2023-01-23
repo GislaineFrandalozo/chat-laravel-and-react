@@ -38,15 +38,15 @@ export default function Welcome(props) {
                     )}
                 </div>
 
-                <div className="grid grid-cols-1 place-content-center max-w-6xl w-3/5 mx-auto lg:px-8 items-center ">
+                <div className="grid font-serif grid-cols-1 place-content-center max-w-6xl w-3/5 mx-auto lg:px-8 items-center ">
                     <div className='w-full'>
                         <h2 className='text-ls md:text-xl 2xl:text-3xl text-gray-700 dark:text-slate-100 underline decoration-pink-500 underline-offset-8'>
-                            Welcome.
+                            Welcome. I'm a developer and this is my first chat!
                         </h2>
                     </div>
-                        <div className='max-w-fit my-8 text-xl md:text-3xl md:px-12 2xl:text-5xl bg-clip-text bg-gradient-to-r from-red-600 to-violet-700 flex flex-col text-transparent'>
-                            <p className='max-w-fit'>{quote.message}</p> 
-                            <p className='text-end max-w-fit self-end md:mt-5'> — {quote.autor}</p>
+                        <div className='max-w-fit my-8 md:px-12 bg-clip-text bg-gradient-to-r from-red-600 to-violet-700 flex flex-col text-transparent'>
+                            <p className='max-w-fit italic text-xl md:text-3xl 2xl:text-5xl'>{quote.message}</p> 
+                            <p className='text-end max-w-fit self-end md:mt-5 text-lg md:text-2xl 2xl:text-4xl'> — {quote.autor}</p>
                         </div>                        
                 </div>
             </div>
