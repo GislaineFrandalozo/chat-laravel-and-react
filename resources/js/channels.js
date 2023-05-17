@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-export var channelGlobalChat = (setMessageListener) => {
+export const channelGlobalChat = (setMessageListener) => {
     Echo.join(`GlobalChat`)
     .here((users) => {
         console.log(users);
@@ -13,8 +13,10 @@ export var channelGlobalChat = (setMessageListener) => {
         // quando um usuario sair
         console.log(user.name);
     })
-    .listen('NewMessage', useCallback(setMessageListener))
-    .listen('NewMessage', (message) => {
-        console.log(message)
-    });
+    .listen('NewMessage', useCallback(setMessageListener));
+}
+
+export const channelQuote = (setMessageQuote) => { 
+    Echo.channel('Quote')
+    .listen('QuoteBroadcasting', useCallback(setMessageQuote));
 }
